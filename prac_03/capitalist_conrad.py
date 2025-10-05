@@ -9,15 +9,16 @@ The price should be displayed to the nearest cent (e.g. $33.59, not $33.59182329
 """
 import random
 
-MAX_INCREASE = 0.175  # 17.5%
+MAX_INCREASE = 0.1  # 10%
 MAX_DECREASE = 0.05  # 5%
 MIN_PRICE = 1
-MAX_PRICE = 100.0
+MAX_PRICE = 1000.0
 INITIAL_PRICE = 10.0
 
 price = INITIAL_PRICE
 number_of_days = 1
-print(f"On day {number_of_days} price is: ${price:,.2f}")
+out_file = open("STOCK_PRICE_DATA.txt", 'w')
+print(f"On day {number_of_days} price is: ${price:,.2f}", file=out_file)
 
 while MIN_PRICE <= price <= MAX_PRICE:
     price_change = 0
@@ -34,4 +35,6 @@ while MIN_PRICE <= price <= MAX_PRICE:
 
     price *= (1 + price_change)
     number_of_days += 1
-    print(f"On day {number_of_days} price is: ${price:,.2f}")
+    print(f"On day {number_of_days} price is: ${price:,.2f}", file=out_file)
+
+out_file.close()
