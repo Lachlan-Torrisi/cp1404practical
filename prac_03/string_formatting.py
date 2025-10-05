@@ -35,4 +35,5 @@ for i, number in enumerate(numbers, 1):
 print(f"{year} {name} for about ${cost:,.0f}!")
 # 1922 Gibson L-5 CES for about $16,036!
 
-
+for i in range(11):
+    print(f"2 ^ {i:<2} is {2 ** i:5}")
