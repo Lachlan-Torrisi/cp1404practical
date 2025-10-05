@@ -17,3 +17,9 @@ print(f"First number: {first_number}")
 print(f"Second number: {second_number}")
 print(f"They add up to: {first_number + second_number}")
 
+
+total = 0
+with open("numbers.txt", 'r') as in_file:
+    for line in in_file:
+        total += int(line)
+print(f"Total of all numbers is: {total}")
