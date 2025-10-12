@@ -26,6 +26,7 @@ def load_data(filename=FILENAME):
 
 
 def print_data(subject_data):
+    """Formats data into a print statement."""
     for subject in subject_data:
         print("{} is taught by {} and has {} students".format(subject[0], subject[1], subject[2]))
 
