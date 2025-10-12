@@ -8,7 +8,8 @@ FILENAME = "subject_data.txt"
 
 def main():
     data = load_data(FILENAME)
-    print(data)
+    print_data(data)
+
 
 
 def load_data(filename=FILENAME):
@@ -24,5 +25,9 @@ def load_data(filename=FILENAME):
     input_file.close()
     return data
 
+
+def print_data(data):
+    for subject in data:
+        print("{} is taught by {} and has {} students".format(subject[0], subject[1], subject[2]))
 
 main()
