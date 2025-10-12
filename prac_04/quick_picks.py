@@ -13,5 +13,5 @@ for i in range(num_picks):
         number = random.randint(MIN, MAX)
         if number not in numbers:
             numbers.append(number)
-
+    numbers.sort()
 
