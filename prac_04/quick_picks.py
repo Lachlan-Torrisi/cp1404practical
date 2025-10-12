@@ -15,3 +15,4 @@ for i in range(num_picks):
             numbers.append(number)
     numbers.sort()
 
+    print(" ".join(f"{num:2}" for num in numbers))
