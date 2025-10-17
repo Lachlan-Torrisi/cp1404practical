@@ -12,7 +12,9 @@ CODE_TO_NAME = {"QLD": "Queensland",
                 "VIC": "Victoria",
                 "TAS": "Tasmania",
                 "SA": "South Australia"}
-print(CODE_TO_NAME)
+
+for code, name in CODE_TO_NAME.items():
+    print(f"{code} is {name}")
 
 state_code = input("Enter short state: ").upper()
 while state_code != "":
