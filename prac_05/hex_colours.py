@@ -1,0 +1,10 @@
+HEXCODE_TO_COLOUR = {"#00ffff": "Aqua",
+                     "#f5f5dc": "Beige",
+                     "#000000": "Black",
+                     "#79443b": "Bole",
+                     "#b5a642": "Brass",
+                     "#a52a2a": "Brown",
+                     "#ffff99": "Canary",
+                     "#b2ffff": "Celeste",
+                     "#36454f": "Charcoal",
+                     "#954535": "Chestnut"}
