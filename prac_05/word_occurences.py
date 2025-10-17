@@ -1,7 +1,7 @@
 """
 Word Occurrences
 Estimate: 10 minutes
-Actual:   
+Actual:
 """
 
 user_message = input("Text: ")
@@ -12,4 +12,5 @@ word_to_count = {}
 for word in words:
     word_to_count[word] = word_to_count.get(word, 0) + 1
 
-print(word_to_count)
+for word, count in word_to_count.items():
+    print(f"{word:12}: {count}")
