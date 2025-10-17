@@ -1,12 +1,13 @@
 """
 Word Occurrences
 Estimate: 10 minutes
-Actual:
+Actual:   20 minutes
 """
 
 user_message = input("Text: ")
 
 words = user_message.split()
+words.sort()
 word_to_count = {}
 
 for word in words:
