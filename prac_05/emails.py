@@ -6,9 +6,13 @@ def main():
     user_email = input("Email: ")
 
     while user_email != "":
-        user_name = "Extract user name from email here (make a function for it)"
-        
+        user_name = get_name_from_email(user_email)
+        print(user_name)
 
-
+def get_name_from_email(user_email):
+    prefix = user_email.split('@')[0]
+    parts = prefix.replace('.', ' ').split()
+    user_name = " ".join(parts).title()
+    return user_name
 
 main()
