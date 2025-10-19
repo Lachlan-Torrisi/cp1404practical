@@ -1,6 +1,3 @@
-
-
-
 def main():
     email_to_name = {}
     user_email = input("Email: ")
@@ -14,12 +11,15 @@ def main():
         email_to_name[user_email] = user_name
         user_email = input("Email: ")
 
-    print(email_to_name)
+    for email, name in email_to_name.items():
+        print(f"{name} ({email})")
+
 
 def get_name_from_email(user_email):
     prefix = user_email.split('@')[0]
     parts = prefix.replace('.', ' ').split()
     user_name = " ".join(parts).title()
     return user_name
+
 
 main()
