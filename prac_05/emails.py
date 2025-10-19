@@ -11,6 +11,10 @@ def main():
         if verification != "" and verification != "Y":
             user_name = input("Name: ")
         print(user_name)
+        email_to_name[user_email] = user_name
+        user_email = input("Email: ")
+
+    print(email_to_name)
 
 def get_name_from_email(user_email):
     prefix = user_email.split('@')[0]
