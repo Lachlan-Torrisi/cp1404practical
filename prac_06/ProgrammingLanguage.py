@@ -12,5 +12,4 @@ class ProgrammingLanguage:
 
     def __str__(self):
         """Returns a formatted string for this language."""
-        return (f"{self.name}, {self.typing} Typing, "
-                f"Reflection={self.reflection}, First appeared in {self.year}")
+        return (f"{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}")
