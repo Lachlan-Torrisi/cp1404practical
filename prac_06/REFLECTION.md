@@ -10,7 +10,7 @@ I now plan before coding, read all instructions carefully, and use constants, fu
 ## What do you still need to change in terms of your approach, application, time on task, attitude, etc.?
 
 I need to work on my commit messages, (naming and when to use them), work on time management, and when to fix certain errors.
-
+ 
 ## What are you doing well in the subject so far that you will keep doing?
 
 I think my pep-8 style and use of docstrings have improved alot since programming 1.
