@@ -6,10 +6,6 @@ def main():
     print("My guitars!")
     guitars = []
 
-    # Uncomment these lines while testing to avoid typing repeatedly
-    # guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
-    # guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
-
     name = input("Name: ")
     while name != "":
         year = int(input("Year: "))
@@ -19,6 +15,10 @@ def main():
         print(f"{guitar} added.\n")
         name = input("Name: ")
 
+    print("\nThese are my guitars:")
+    for i, guitar in enumerate(guitars, 1):
+        vintage_string = " (vintage)" if guitar.is_vintage() else ""
+        print(f"Guitar {i}: {guitar.name:10} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage_string}")
 
 
 if __name__ == "__main__":
