@@ -11,6 +11,6 @@ class ProgrammingLanguage:
         return self.typing.lower() == "dynamic"
 
     def __str__(self):
-        """Return a nicely formatted string for this language."""
+        """Returns a formatted string for this language."""
         return (f"{self.name}, {self.typing} Typing, "
                 f"Reflection={self.reflection}, First appeared in {self.year}")
