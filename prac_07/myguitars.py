@@ -1,9 +1,13 @@
 from guitar import Guitar
 
+
 def main():
     """Read guitars from file, store as objects, and display."""
     guitars = load_guitars("guitars.csv")
     print("These are my guitars:")
+
+    guitars.sort(key=lambda guitar: guitar.year)
+    print("These are my guitars (sorted by year)")
     for guitar in guitars:
         print(guitar)
 
@@ -17,5 +21,6 @@ def load_guitars(filename):
             guitar = Guitar(name, int(year), float(cost))
             guitars.append(guitar)
     return guitars
+
 
 main()
