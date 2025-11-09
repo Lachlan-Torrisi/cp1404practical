@@ -34,7 +34,7 @@ def main():
             filename = input("Filename to save to: ")
             save_projects(filename, projects)
         elif choice == "d":
-            pass
+            display_projects(projects)
         elif choice == "f":
             pass
         elif choice == "a":
@@ -73,6 +73,20 @@ def save_projects(filename, projects):
         for project in projects:
             file.write(
                 f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t{project.priority}\t{project.cost_estimate}\t{project.completion_percentage}\n")
+
+
+def display_projects(projects):
+    """Display complete and incomplete projects sorted by priority."""
+    incomplete_projects = [p for p in projects if not p.is_complete()]
+    complete_projects = [p for p in projects if p.is_complete()]
+
+    print("Incomplete projects:")
+    for project in sorted(incomplete_projects):
+        print(f"  {project}")
+
+    print("Completed projects:")
+    for project in sorted(complete_projects):
+        print(f"  {project}")
 
 
 if __name__ == "__main__":
