@@ -1,6 +1,6 @@
 """
 Estimate: 60 min
-Actual:
+Actual: 80 min
 """
 
 from project import Project
@@ -46,6 +46,10 @@ def main():
         print(menu)
         choice = input(">>> ").lower()
 
+    choice = input(f"Would you like to save to {DEFAULT_FILENAME}? ").lower()
+    if choice in ["yes", "y"]:
+        save_projects(DEFAULT_FILENAME, projects)
+        print(f"Projects saved to {DEFAULT_FILENAME}")
     print("Thank you for using custom-built project management software.")
 
 
