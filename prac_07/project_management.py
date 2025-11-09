@@ -27,7 +27,22 @@ def main():
     choice = input(">>> ").lower()
 
     while choice != "q":
-        print("Menu option in progress...")  # placeholder
+        if choice == "l":
+            filename = input("Filename to load from: ")
+            projects = load_projects(filename)
+        elif choice == "s":
+            filename = input("Filename to save to: ")
+            save_projects(filename, projects)
+        elif choice == "d":
+            pass
+        elif choice == "f":
+            pass
+        elif choice == "a":
+            pass
+        elif choice == "u":
+            pass
+        else:
+            print("Invalid Choice")
         print(menu)
         choice = input(">>> ").lower()
 
@@ -49,6 +64,15 @@ def load_projects(filename):
             project = Project(name, start_date, priority, cost_estimate, completion_percentage)
             projects.append(project)
     return projects
+
+
+def save_projects(filename, projects):
+    """Save current projects to a named file."""
+    with open(filename, "w") as file:
+        print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=file)
+        for project in projects:
+            file.write(
+                f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t{project.priority}\t{project.cost_estimate}\t{project.completion_percentage}\n")
 
 
 if __name__ == "__main__":
