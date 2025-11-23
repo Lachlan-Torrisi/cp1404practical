@@ -10,20 +10,20 @@ def main():
     taxis = [Taxi("Prius", 100),
              SilverServiceTaxi("Limo", 100, 2),
              SilverServiceTaxi("Hummer", 200, 4)]
-    taxi_choice = 0
+    user_taxi = 0
 
     choice = input(">>> ").lower()
     while choice != "q":
         if choice == "c":
-            choose_taxi(taxis)
+            user_taxi = choose_taxi(taxis)
         elif choice == "d":
-            if taxi_choice == 0:
+            if user_taxi == 0:
                 print("You need to choose a taxi before you can drive")
             else:
-                pass
+                drive_taxi(user_taxi)
         else:
             print("Invalid option")
-
+        print(MENU)
         choice = input(">>> ").lower()
 
 
@@ -43,6 +43,16 @@ def choose_taxi(taxis):
     except ValueError:
         print("Invalid taxi choice")
         return 0
+
+
+def drive_taxi(user_taxi):
+    """Drive the taxi for distance and returns cost."""
+    distance = int(input("Drive how far? "))
+
+    user_taxi.start_fare()
+    user_taxi.drive(distance)
+    trip_cost = user_taxi.get_fare()
+    print(f"Your {user_taxi.name} trip cost you ${trip_cost}")
 
 
 main()
